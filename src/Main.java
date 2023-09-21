@@ -28,6 +28,11 @@ public class Main {
         double finalBill = totalCost + tip;
         System.out.println("Total bill with tip: $" + finalBill);
         double perPersonCost = totalCost / people;
+        System.out.println("Per person cost before tip: $" + perPersonCost);
+        double tipPerPerson = tip / people;
+        System.out.println("Tip per person: $" + tipPerPerson);
+        perPersonCost += tipPerPerson;
+        System.out.println("Total cost per person: $" + perPersonCost);
 
 
     }
