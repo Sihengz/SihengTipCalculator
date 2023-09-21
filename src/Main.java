@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
@@ -18,7 +19,8 @@ public class Main {
         int tipPercent = scan.nextInt();
         scan.nextLine();
 
-        String items = "";
+        ArrayList<String> items = new ArrayList<String>();
+        String item;
         double totalCost = 0;
         double currentItemCost = 0;
         while (currentItemCost != -1.0) {
@@ -27,7 +29,9 @@ public class Main {
             if (currentItemCost != -1.0) {
                 totalCost += currentItemCost;
             }
-            //TODO items
+            System.out.print("Enter the item; ");
+            item = scan.nextLine();
+            items.add(item);
 
         }
         System.out.println("____________________________");
@@ -45,6 +49,7 @@ public class Main {
         System.out.println("Total cost per person: $" + decimalFormat.format(perPersonCost));
         System.out.println("____________________________");
         System.out.println("Items ordered: ");
+
         System.out.println(items);
 
     }
