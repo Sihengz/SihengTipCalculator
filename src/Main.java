@@ -16,7 +16,19 @@ public class Main {
         while (currentItemCost != -1.0) {
             System.out.print("Enter a cost in  dollars and cents, e.g. 12.50 (-1 to end)");
             currentItemCost = scan.nextDouble();
-
+            if (currentItemCost != -1.0) {
+                totalCost += currentItemCost;
+            }
         }
+        System.out.println("____________________________");
+        System.out.println("Total bill before tip: $" + totalCost);
+        System.out.println("Total percentage: " + tipPercent + "%");
+        double tip = (tipPercent / 100.0) * totalCost;
+        System.out.println("Total tip: $" + (tip));
+        double finalBill = totalCost + tip;
+        System.out.println("Total bill with tip: $" + finalBill);
+        double perPersonCost = totalCost / people;
+
+
     }
 }
