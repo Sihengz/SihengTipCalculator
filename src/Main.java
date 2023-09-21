@@ -18,6 +18,7 @@ public class Main {
         int tipPercent = scan.nextInt();
         scan.nextLine();
 
+        String items = "";
         double totalCost = 0;
         double currentItemCost = 0;
         while (currentItemCost != -1.0) {
@@ -26,6 +27,8 @@ public class Main {
             if (currentItemCost != -1.0) {
                 totalCost += currentItemCost;
             }
+            //TODO items
+
         }
         System.out.println("____________________________");
         System.out.println("Total bill before tip: $" + totalCost);
@@ -40,7 +43,9 @@ public class Main {
         System.out.println("Tip per person: $" + decimalFormat.format(tipPerPerson));
         perPersonCost += tipPerPerson;
         System.out.println("Total cost per person: $" + decimalFormat.format(perPersonCost));
-
+        System.out.println("____________________________");
+        System.out.println("Items ordered: ");
+        System.out.println(items);
 
     }
 }
