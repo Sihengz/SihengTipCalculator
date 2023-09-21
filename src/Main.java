@@ -5,6 +5,8 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner scan = new Scanner(System.in);
+
+        // Learned how to round from https://jenkov.com/tutorials/java-internationalization/decimalformat.html
         String pattern = "###,###.##";
         DecimalFormat decimalFormat = new DecimalFormat(pattern);
 
@@ -31,13 +33,13 @@ public class Main {
         double tip = (tipPercent / 100.0) * totalCost;
         System.out.println("Total tip: $" + (decimalFormat.format(tip)));
         double finalBill = totalCost + tip;
-        System.out.println("Total bill with tip: $" + finalBill);
+        System.out.println("Total bill with tip: $" + decimalFormat.format(finalBill));
         double perPersonCost = totalCost / people;
-        System.out.println("Per person cost before tip: $" + perPersonCost);
+        System.out.println("Per person cost before tip: $" + decimalFormat.format(perPersonCost));
         double tipPerPerson = tip / people;
-        System.out.println("Tip per person: $" + tipPerPerson);
+        System.out.println("Tip per person: $" + decimalFormat.format(tipPerPerson));
         perPersonCost += tipPerPerson;
-        System.out.println("Total cost per person: $" + perPersonCost);
+        System.out.println("Total cost per person: $" + decimalFormat.format(perPersonCost));
 
 
     }
