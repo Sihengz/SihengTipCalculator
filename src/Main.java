@@ -20,20 +20,25 @@ public class Main {
         scan.nextLine();
 
         ArrayList<String> items = new ArrayList<String>();
+        ArrayList<Double> itemCosts = new ArrayList<Double>();
         String item;
         double totalCost = 0;
         double currentItemCost = 0;
         while (currentItemCost != -1.0) {
             System.out.print("Enter a cost in  dollars and cents, e.g. 12.50 (-1 to end): ");
             currentItemCost = scan.nextDouble();
+            scan.nextLine();
             if (currentItemCost != -1.0) {
-                totalCost += currentItemCost;
-            }
-            System.out.print("Enter the item; ");
-            item = scan.nextLine();
-            items.add(item);
 
+                // Makes sure -1 doesnt get added and it stops the program
+                totalCost += currentItemCost;
+                itemCosts.add(currentItemCost);
+                System.out.print("Enter the item: ");
+                item = scan.nextLine();
+                items.add(item);
+            }
         }
+        // calc and print info
         System.out.println("____________________________");
         System.out.println("Total bill before tip: $" + totalCost);
         System.out.println("Total percentage: " + tipPercent + "%");
@@ -49,8 +54,9 @@ public class Main {
         System.out.println("Total cost per person: $" + decimalFormat.format(perPersonCost));
         System.out.println("____________________________");
         System.out.println("Items ordered: ");
+        for (int i = 0; i < items.size(); i++) {
+            System.out.println(items.get(i) + " : " + itemCosts.get(i) + "$");
 
-        System.out.println(items);
-
+        }
     }
 }
