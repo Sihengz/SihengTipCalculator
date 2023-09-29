@@ -25,7 +25,7 @@ public class Main {
         double totalCost = 0;
         double currentItemCost = 0;
         while (currentItemCost != -1.0) {
-            System.out.print("Enter a cost in  dollars and cents, e.g. 12.50 (-1 to end): ");
+            System.out.print("Enter a cost in dollars and cents, e.g. 12.50 (-1 to end): ");
             currentItemCost = scan.nextDouble();
             scan.nextLine();
             if (currentItemCost != -1.0) {
